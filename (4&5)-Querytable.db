@@ -1,0 +1,14 @@
+SELECT ID, Name, Email, CountryCode, Budget, Used
+FROM Customer
+
+WHERE Used > 500000;
+
+SELECT
+    c.ID AS CustomerID,
+    c.Name,
+    c.Email,
+    o.ID AS OrderID,
+    o.Date,
+    o.Amount
+FROM Customer c
+JOIN Order o ON c.ID = o.CustomerID;

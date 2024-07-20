@@ -1,0 +1,55 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rainbow-background {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 200% 200%;
+  animation: rainbow 5s ease infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@layer components {
+  .fade-in {
+    @apply opacity-0 transition-opacity duration-1000 ease-in-out;
+  }
+
+  .fade-in.active {
+    @apply opacity-100;
+  }
+
+  .slide-left {
+    @apply transform translate-x-full transition-transform duration-500 ease-in-out;
+  }
+
+  .slide-left.active {
+    @apply transform translate-x-0;
+  }
+
+  .slide-right {
+    @apply transform -translate-x-full transition-transform duration-500 ease-in-out;
+  }
+
+  .slide-right.active {
+    @apply transform translate-x-0;
+  }
+}
